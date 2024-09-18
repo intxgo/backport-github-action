@@ -12,6 +12,8 @@ type Inputs = {
   autoBackportLabelPrefix: string;
   repoForkOwner: string;
   addOriginalReviewers: boolean;
+  autoMerge: boolean;
+  autoMergeMethod: string;
 };
 
 export async function run({
@@ -86,6 +88,9 @@ function getActionOptions(inputs: Inputs, context: Context) {
   const options = {
     accessToken: inputs.accessToken,
     assignees: [pullRequest.user.login as string],
+    autoMerge: inputs.autoMerge,
+    autoMergeMethod:
+      inputs.autoMergeMethod !== '' ? inputs.autoMergeMethod : 'merge',
     branchLabelMapping:
       inputs.autoBackportLabelPrefix !== ''
         ? { [`^${inputs.autoBackportLabelPrefix}(.+)$`]: '$1' }

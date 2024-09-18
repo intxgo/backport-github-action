@@ -27,6 +27,8 @@ describe('run', () => {
     await run({
       inputs: {
         accessToken: 'very-secret',
+        autoMerge: true,
+        autoMergeMethod: 'merge',
         autoBackportLabelPrefix: 'backport-to-',
         repoForkOwner: '',
         addOriginalReviewers: true,
@@ -51,6 +53,8 @@ describe('run', () => {
       options: {
         accessToken: 'very-secret',
         assignees: ['sorenlouv'],
+        autoMerge: true,
+        autoMergeMethod: 'merge',
         branchLabelMapping: {
           '^backport-to-(.+)$': '$1',
         },
@@ -81,6 +85,8 @@ describe('run', () => {
     const p = run({
       inputs: {
         accessToken: 'very-secret',
+        autoMerge: false,
+        autoMergeMethod: 'squash',
         autoBackportLabelPrefix: '',
         repoForkOwner: '',
         addOriginalReviewers: true,

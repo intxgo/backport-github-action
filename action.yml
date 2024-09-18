@@ -14,6 +14,14 @@ inputs:
     description: Boolean, if set to true the reviewers of the original PR will also be added to the backport PRs
     required: false
     default: false
+  auto_merge:
+    description: Boolean, if set to true the PR will be automatically merged if all checks are satisfied
+    required: false
+    default: false
+  auto_merge_method:
+    description: The github merge method ['merge', 'squash', 'rebase']
+    required: false
+    default: 'merge'
 runs:
   using: 'node20'
   main: 'dist/index.js'

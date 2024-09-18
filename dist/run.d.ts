@@ -5,6 +5,8 @@ type Inputs = {
     autoBackportLabelPrefix: string;
     repoForkOwner: string;
     addOriginalReviewers: boolean;
+    autoMerge: boolean;
+    autoMergeMethod: string;
 };
 export declare function run({ context, inputs, }: {
     context: Context;

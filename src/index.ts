@@ -20,6 +20,12 @@ run({
     addOriginalReviewers: core.getBooleanInput('add_original_reviewers', {
       required: false,
     }),
+    autoMerge: core.getBooleanInput('auto_merge', {
+      required: false,
+    }),
+    autoMergeMethod: core.getInput('auto_merge_method', {
+      required: false,
+    }),
   },
 })
   .then((res) => {
