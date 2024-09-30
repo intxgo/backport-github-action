@@ -1,9 +1,13 @@
 {
-  "include": ["./src/**/*"],
+  "include": [
+    "./src/**/*"
+  ],
   "compilerOptions": {
     "declaration": true,
     "target": "ES2021",
-    "lib": ["ES2021"],
+    "lib": [
+      "ES2021"
+    ],
     "module": "CommonJS",
     "outDir": "./ts-dist",
     "forceConsistentCasingInFileNames": true,
